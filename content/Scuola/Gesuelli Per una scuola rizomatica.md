@@ -4,7 +4,7 @@ date: 2025-07-11
 tags: scuola 
 ---
 
-Fabrizio Gesualli, "L'Indiscreto", 2025-07-11, URL: https://www.indiscreto.org/per-una-scuola-rizomatica/ 
+Fabrizio Gesuelli, "L'Indiscreto", 2025-07-11, URL: https://www.indiscreto.org/per-una-scuola-rizomatica/ 
 
 La pedagogia che ho in mente si ispira al rizoma e alla deterritorializzazione tratte da *I Mille Piani* di Deleuze e Guattari. Due parole strane, che racchiudono concetti molto semplici come quello di partire al contrario rispetto alle consuete teorie pedagogiche, comprese quelle a cui fanno riferimento le recenti Indicazioni Nazionali. Invece di considerare il docente come osservatore neutro di oggetti — gli studenti, osservati, misurati e formati — assume che docenti e studenti siano soggetti in relazione reciproca.
 
