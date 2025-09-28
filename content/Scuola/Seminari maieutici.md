@@ -1,9 +1,7 @@
 ---
+title: "Seminari maieutici"
 date: 2025-07-09
 ---
-
-# Seminari maieutici
-
-Argomenti.
+## Argomenti
 
 Quale è la cosa più preziosa al mondo?
