@@ -1,4 +1,5 @@
 ---
+title: La Russia contro la modernità
 date: 2025-09-15
 tags:
  - "Russia"
@@ -6,7 +7,7 @@ tags:
  - "Vladimir Putin"
 ---
 
-A. Etkind, *La Russia contro la modernità*, Bollati Boringhieri, Torino 2025. Ebook Kindle.
+>[!info] A. Etkind, *La Russia contro la modernità*, Bollati Boringhieri, Torino 2025. Ebook Kindle.
 
 Libro interessante di uno storico e psicologo russo che oggi insegna a Vienna. Interpreta il fascismo di Putin come una reazione alle politiche che cercano di rispondere al pericolo rappresentato dal cambiamento climatico. La Russia post-comunista è un *petrostato*, la cui economia è basata interamente sul gas e sul petrolio. Lo classe politica e gli oligarchi ricavano da qui la propria ricchezza e dunque non investono nulla in sviluppo, servizi, istruzione e sanità, ambiti nei quali la Russia è fortemente arretrata.
 
