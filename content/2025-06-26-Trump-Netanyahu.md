@@ -1,8 +1,8 @@
 ---
 title: "Trump su Netanyahu"
 tags: 
- - "Donald Trump"
- - "Benyamin Netanyahu" 
+ - Donald-Trump
+ - Benyamin-Netanyahu 
 
 ---
 

@@ -2,8 +2,8 @@
 title: "Su Charlie Kirk"
 date: 2025-09-16
 tags:
- - "Stati Uniti"
- - "Charlie Kirk"
+ - "Stati-Uniti"
+ - "Charlie-Kirk"
 ---
  
 

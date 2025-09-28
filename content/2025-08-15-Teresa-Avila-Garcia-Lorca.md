@@ -1,8 +1,8 @@
 ---
 title: "Teresa d'Avila e il duende"
 tags:
- - "Teresa d'Avila"
- - "Federico Garcia Lorca"
+ - "Teresa-d-Avila"
+ - "Federico-Garcia-Lorca"
  - "duende"
  - "flamenco"
 ---

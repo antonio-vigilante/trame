@@ -2,7 +2,7 @@
 title: "Francesco d'Assisi e l'errore"
 tags: 
  - "errore"
- - "Francesco d'Assisi"
+ - "Francesco-d-Assisi"
 ---
 
 [462] È impossibile comprendere umanamente la sua commosione, quando proferiva il tuo Nome, o Dio! Allora, travolto dalla gioia e traboccante di castissima allegrezza, sembrava veramente un uomo nuovo e di altro mondo. Per questo, ovunque trovava qualche scritto, di cose divine o umane, per strada, in casa o sul pavimento, lo raccoglieva con grande rispetto, riponendolo in un luogo sacro o almeno decoroso, nel timore si trovasse il nome del Signore, o qualcosa che lo riguardasse.
