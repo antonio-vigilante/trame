@@ -1,5 +1,5 @@
 ---
-title: La Russia contro la modernità
+title: "La Russia contro la modernità"
 date: 2025-09-15
 tags:
  - "Russia"

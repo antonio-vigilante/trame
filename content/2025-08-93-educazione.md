@@ -1,5 +1,5 @@
 ---
-ttle: "Educazione"
+title: "Educazione"
 data: 2025-08-03
 tag:
  - "educazione"
