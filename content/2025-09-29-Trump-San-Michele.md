@@ -8,7 +8,7 @@ tags:
  - Diavolo
 ---
 
-# Presidential Message on the Feast of Saint Michael the Archangel 
+###  Presidential Message on the Feast of Saint Michael the Archangel 
 
 Today, I salute the millions of Christian believers in the United States and around the world observing the Feast of Saint Michael the Archangel.
 
