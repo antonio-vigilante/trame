@@ -1,5 +1,6 @@
 ---
-title: Zuihitzu
+title: textus vitae 
 ---
 
-Questo è il digital garden di Antonio Vigilante.
+
+Hic vestigia relinquo quae video, audio, lego; quae cogito; quomodo mundus me pervadat, me fascinare, terrere, obmutescere faciat.
