@@ -24,11 +24,11 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        body: "PT Serif",
         code: "IBM Plex Mono",
       },
       colors: {
-        lightMode: {
+          lightMode: {
           light: "#faf8f8",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
