@@ -1,7 +1,7 @@
 ---
-title: textus vitae 
+title: "cos'è questo?"
+date: "" 
 ---
-
 
 Questo sito raccoglie tracce di quel che vedo, che sento, che leggo, che penso: del modo in cui il mondo mi pervade, mi affascina, mi atterrisce e mi spinge al silenzio.
 
