@@ -91,9 +91,16 @@ const config: QuartzConfig = {
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
-    ],
+     // Plugin.CustomOgImages(),
+       ],
   },
 }
 
+config.configuration.defaultPageMetadata = {
+  title: "Trame",
+  description: "Eventi, segni, document",
+  ogImage: "/Og-Image.png",
+  }
+
 export default config
+
