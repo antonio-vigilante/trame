@@ -77,6 +77,13 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
+      Plugin.CustomOgImages({
+      colorScheme: "lightMode",
+      width: 1200,
+      height: 630,
+      excludeRoot: false,
+      // imageStructure: defaultImage, // usa questa riga solo se importi davvero defaultImage
+      }),
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
@@ -103,4 +110,5 @@ config.configuration.defaultPageMetadata = {
   }
 
 export default config
+
 
