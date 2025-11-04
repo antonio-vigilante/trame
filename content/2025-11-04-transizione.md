@@ -15,3 +15,5 @@ tags:
 Byung-Chul Han, *Del vuoto. Sulla cultura e filosofia dell'estremo Oriente*, nottetempo, Milano 2024.
 
 Siena, parco del Petriccio. 
+
+[2025-10-13](2025-10-13.md)
