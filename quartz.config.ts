@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     customCss: ["styles/custom.scss"],
     },
     locale: "it-IT",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "https://trame.pages.dev/",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -31,7 +31,7 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
+          light: "#ffffff",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",
@@ -77,36 +77,32 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-      Plugin.CustomOgImages({
-      colorScheme: "lightMode",
-      width: 1200,
-      height: 630,
-      excludeRoot: false,
-      // imageStructure: defaultImage, // usa questa riga solo se importi davvero defaultImage
-      }),
-      Plugin.AliasRedirects(),
-      Plugin.ComponentResources(),
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage(),
-      Plugin.ContentIndex({
-        enableSiteMap: true,
-        enableRSS: true,
-      }),
-      Plugin.Assets(),
-      Plugin.Static(),
-      Plugin.Favicon(),
-      Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-     // Plugin.CustomOgImages(),
-       ],
+  Plugin.CustomOgImages({
+    colorScheme: "lightMode",
+    width: 1200,
+    height: 630,
+    excludeRoot: false,
+    // imageStructure: defaultImage, // abilita solo se lo importi davvero
+  }),
+  Plugin.AliasRedirects(),
+  Plugin.ComponentResources(),
+  Plugin.ContentPage(),
+  Plugin.FolderPage(),
+  Plugin.TagPage(),
+  Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
+  Plugin.Assets(),
+  Plugin.Static(),
+  Plugin.Favicon(),
+  Plugin.NotFoundPage(),
+],
+
   },
 }
 
 config.configuration.defaultPageMetadata = {
   title: "Trame",
   description: "Eventi, segni, document",
-  ogImage: "/Og-Image.png",
+  // ogImage: "/Og-Image.png",
   }
 
 export default config
