@@ -8,25 +8,23 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "trame",
+    pageTitle: "Trame",
     pageTitleSuffix: "",
-    enableSPA: true,
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
-    customCss: ["styles/custom.scss"],
     },
-    locale: "it-IT",
-    baseUrl: "https://trame.pages.dev/",
+    locale: "en-US",
+    baseUrl: "trame.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "PT Sans",
-        body: "Georgia",
+        header: "Schibsted Grotesk",
+        body: "Source Sans Pro",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -42,11 +40,11 @@ const config: QuartzConfig = {
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#ffffff",
+          light: "#161618",
           lightgray: "#393639",
           gray: "#646464",
-          darkgray: "#8b0000",
-          dark: "#8b0000",
+          darkgray: "#d4d4d4",
+          dark: "#ebebec",
           secondary: "#7b97aa",
           tertiary: "#84a59d",
           highlight: "rgba(143, 159, 169, 0.15)",
@@ -77,34 +75,23 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-  Plugin.CustomOgImages({
-    colorScheme: "lightMode",
-    width: 1200,
-    height: 630,
-    excludeRoot: false,
-    // imageStructure: defaultImage, // abilita solo se lo importi davvero
-  }),
-  Plugin.AliasRedirects(),
-  Plugin.ComponentResources(),
-  Plugin.ContentPage(),
-  Plugin.FolderPage(),
-  Plugin.TagPage(),
-  Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
-  Plugin.Assets(),
-  Plugin.Static(),
-  Plugin.Favicon(),
-  Plugin.NotFoundPage(),
-],
-
+      Plugin.AliasRedirects(),
+      Plugin.ComponentResources(),
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
+      Plugin.ContentIndex({
+        enableSiteMap: true,
+        enableRSS: true,
+      }),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.Favicon(),
+      Plugin.NotFoundPage(),
+      // Comment out CustomOgImages to speed up build time
+      Plugin.CustomOgImages(),
+    ],
   },
 }
 
-config.configuration.defaultPageMetadata = {
-  title: "Trame",
-  description: "Eventi, segni, document",
-  // ogImage: "/Og-Image.png",
-  }
-
 export default config
-
-
