@@ -1,13 +1,10 @@
 ---
-title: "cos'è questo?"
+title: "Cos'è questo?"
 date: "" 
 ---
 
-Questo sito raccoglie tracce di quel che vedo, che sento, che leggo, che penso: del modo in cui il mondo mi pervade, mi affascina, mi atterrisce e mi spinge al silenzio.
+Un uomo. Un bambino, con il nome di una divinità greca. Una donna. Un cane. Siena, quartiere Petriccio. Un parco: olivi, cipressi, cedri. Un fico. Un albero morto. 
+E pensieri, sensazion, ricordi. Tentativi di afferrare un senso, di afferrarsi a qualcosa o di abbandonarsi. Dentro e fuori che si alternano, e momenti in cui il confine si fa sottile. 
+Frammenti che cercano una trama.
 
-Ogni elemento è una traccia: qualcosa che è passato, ma continua. Il grafo mostra i legami tra questi frammenti - il farsi della *trama*.
-
-Non c’è un ordine da seguire. Si può entrare ovunque. Alcuni contenuti sono personali, altri no.
-Tutti sono veri, nel senso in cui qualcosa lo è quando lo si attraversa.
-
-Io sono il processo temporaneo Antonio Vigilante.
+Questo è.
