@@ -1,5 +1,5 @@
 ---
-title: "San Michele"
+title: "29 settembre 2025"
 date: 2025-09-29
 tags:
  - San Michele

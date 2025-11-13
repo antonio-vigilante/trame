@@ -1,5 +1,5 @@
 ---
-title: "Essere amati"
+title: "2 ottobre 2025"
 date: 2025-10-02
 tags:
  - amore
