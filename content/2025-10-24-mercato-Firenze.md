@@ -1,5 +1,5 @@
 ---
-title: "Mercato centrale, Firenze"
+title: "24 ottobre 2024"
 date: 2025-10-24
 tags:
  - Firenze
