@@ -1,5 +1,5 @@
 ---
-title: "La morte penale"
+title: "10 ottobre 2025"
 date: 2025-10-10
 tags:
  - Simone Weil
