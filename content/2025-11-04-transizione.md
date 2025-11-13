@@ -1,5 +1,5 @@
 ---
-title: "Transizione"
+title: "4 novembre 2025"
 date: 2025-11-04
 tags:
  - bellezza
