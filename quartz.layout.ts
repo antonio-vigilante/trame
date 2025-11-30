@@ -40,7 +40,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({ 
-      title: "Diario", // 1. Cambia il titolo
+      title: "Anni, mesi, giorni", // 1. Cambia il titolo
       folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
       folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
     }), 
@@ -98,7 +98,7 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({ 
-      title: "Diario", // 1. Cambia il titolo
+      title: "Anni, mesi, giorni", // 1. Cambia il titolo
       folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
       folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
     }),
