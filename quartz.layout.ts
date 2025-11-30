@@ -39,7 +39,11 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({ title: "Giorni" }), // ⬅️ MODIFICA APPORTATA QUI
+    Component.Explorer({ 
+      title: "Diario", // 1. Cambia il titolo
+      folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
+      folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
+    }), 
   ],
   // All'interno del tuo file quartz.layout.ts, nella sezione defaultContentPageLayout
   right: [
@@ -81,7 +85,11 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer({ title: "Giorni" }), // ⬅️ MODIFICA APPORTATA QUI
+    Component.Explorer({ 
+      title: "Diario", // 1. Cambia il titolo
+      folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
+      folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
+    }),
   ],
   right: [],
 }
