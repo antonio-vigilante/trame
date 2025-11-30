@@ -1,5 +1,5 @@
 ---
-title: "24 ottobre 2024"
+title: "2025-10-24"
 date: 2025-10-24
 tags:
  - Firenze
