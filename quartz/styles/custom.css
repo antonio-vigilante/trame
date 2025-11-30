@@ -1,4 +1,8 @@
-.graph {
+/* Fix: Graph nella home con height 0 */
+#graph,
+#graph-container,
+.graph,
+#graph-svg {
   height: 420px !important;
   min-height: 420px !important;
 }
