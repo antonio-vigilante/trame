@@ -8,6 +8,11 @@ E il mondo intorno.
 
 *Trame* è un diario del processo temporaneo Antonio Vigilante.
 
+### Dicembre
+
+La meraviglia di fronte a [[2025-12-02 | un albero scintillante]]: e la felicità che forse è un [[2025-12-09-0802 | un treno a valore prima di andare a scuola]]. Ancora [[2025-12-12 | un riccio morto]] che è quasi nulla ormai. Ontologia di [[2023-12-13 | Babbo Natale]] e [[tags/altro | fenomenologia dell'altro]]. A via Camollia [[2025-12-20 | si fa a gara a chi arriva prima]]. 
+
+
 ### Novembre
 
 Il [[2025-11-08 | funerale]] di una ragazza di ventiquattro anni. Un [[2025-11-09 | riccio morto in un prato]]. Un [[2025-11-16 | fiore azzurro]] che non cerca nulla. Il [[2025-11-04 | fico]] si ritrae verso [[2015-11-29 | la sua forma invernale]].
