@@ -1,0 +1,10 @@
+
+% Per gli audio
+
+<audio controls>
+  <source src="/audio/nomefile.mp3" type="audio/mp3"/>
+  Il tuo browser non supporta l'audio HTML5.
+</audio>
+
+Adattare il formato del file.
+
