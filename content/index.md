@@ -7,7 +7,7 @@ date: ""
 
 ### Gennaio
 
-Capodanno a [[2026-01-01_1257 |Macerata]]. L'ICE uccide a sangue freddo [[2026-01-07 | René-Nicole-Good] e poi [[2026-01-25 | Alex Pretti]]. Gli Stati Uniti [[2026-01-03 | invadono il Venezuela e arrestano il presidente Maduro]]. Ermes [[2026-01-06_1221 | scopre la neve]]. Esce [[2026-01-22_1331 | un mio libro]]. Una conferenza bianca. E pensieri sull'altro.
+Capodanno a [[2026-01-01_1257 |Macerata]]. L'ICE uccide a sangue freddo [[2026-01-07 | René-Nicole-Good]] e poi [[2026-01-25 | Alex Pretti]]. Gli Stati Uniti [[2026-01-03 | invadono il Venezuela e arrestano il presidente Maduro]]. Ermes [[2026-01-06_1221 | scopre la neve]]. Esce [[2026-01-22_1331 | un mio libro]]. Una [[2026-01-31 | conferenza bianca]]. E pensieri sull'altro.
 
 ## 2025
 
