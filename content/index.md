@@ -5,6 +5,12 @@ date: ""
 
 *Trame* è un piccolo diario per testo, suoni e immagini del processo temporaneo Antonio Vigilante.
 
+### Gennaio
+
+Capodanno a [[2026-01-01_1257 |Macerata]]. L'ICE uccide a sangue freddo [[2026-01-07 | René-Nicole-Good] e poi [[2026-01-25 | Alex Pretti]]. Gli Stati Uniti [[2026-01-03 | invadono il Venezuela e arrestano il presidente Maduro]]. Ermes [[2026-01-06_1221 | scopre la neve]]. Esce [[2026-01-22_1331 | un mio libro]]. Una conferenza bianca. E pensieri sull'altro.
+
+## 2025
+
 ### Dicembre
 
 La meraviglia di fronte a [[2025-12-02 | un albero scintillante]]: e la felicità che forse è un [[2025-12-09-0802 | un treno a valore prima di andare a scuola]]. Ancora [[2025-12-12 | un riccio morto]] che è quasi nulla ormai. Ontologia di [[2023-12-13 | Babbo Natale]] e [[tags/altro | fenomenologia dell'altro]]. A via Camollia [[2025-12-20 | si fa a gara a chi arriva prima]]. 
