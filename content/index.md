@@ -1,5 +1,5 @@
 ---
-title: "Cos'è questo?"
+title: Delle piccole cose
 date: ""
 ---
 
