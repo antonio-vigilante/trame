@@ -5,6 +5,10 @@ date: ""
 
 *Trame* è un piccolo diario per testo, suoni e immagini del processo temporaneo Antonio Vigilante.
 
+### Febbraio.
+
+Ancora pensieri sull'[[2026-02-07|altro]]: e sulla [[2026-02-08|violenza]]. A [[2026-02-10_1014|Foggia]] per rinunciare a una cosa. La bellezza altera del volto di una [[2026-02-13-17.06|Madonna di Carlo Crivelli]] ai Musei Vaticani; e [[2026-02-13-18.10|il brusio della Cappella Sistina]]. Stati Uniti e Israele attaccano l’Iran.
+
 ### Gennaio
 
 Capodanno a [[2026-01-01_1257 |Macerata]]. L'ICE uccide a sangue freddo [[2026-01-07 | René-Nicole-Good]] e poi [[2026-01-25 | Alex Pretti]]. Gli Stati Uniti [[2026-01-03 | invadono il Venezuela e arrestano il presidente Maduro]]. Ermes [[2026-01-06_1221 | scopre la neve]]. Esce [[2026-01-22_1331 | un mio libro]]. Una [[2026-01-31 | conferenza bianca]]. E pensieri sull'altro.
