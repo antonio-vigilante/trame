@@ -5,6 +5,11 @@ date: ""
 
 *Trame* è un piccolo diario per testo, suoni e immagini del processo temporaneo Antonio Vigilante.
 
+### Marzo
+
+Gli Stati Uniti [[2026-03-01|uccidono bambine in una scuola iraniana]]. Pensieri [[2026-03-13|per giorni di pioggia]]. Un albero che la morte [[2026-03-14-1025|non ha salvato dal taglio]]; e [[2026-03-26_0900|ancora morte]]. Rothko [[2026-03-20_1327|a Firenze]]. Fiorisce [[2026-03-28_1023|l'ornitogallo]].
+
+
 ### Febbraio.
 
 Ancora pensieri sull'[[2026-02-07|altro]]: e sulla [[2026-02-08|violenza]]. A [[2026-02-10_1014|Foggia]] per rinunciare a una cosa. La bellezza altera del volto di una [[2026-02-13-17.06|Madonna di Carlo Crivelli]] ai Musei Vaticani; e [[2026-02-13-18.10|il brusio della Cappella Sistina]]. Stati Uniti e Israele attaccano l’Iran.
