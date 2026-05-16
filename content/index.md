@@ -1,5 +1,5 @@
 ---
-title: Delle piccole cose
+title: delle piccole cose
 date: ""
 ---
 
@@ -8,7 +8,6 @@ date: ""
 ### Marzo
 
 Gli Stati Uniti [[2026-03-01|uccidono bambine in una scuola iraniana]]. Pensieri [[2026-03-13|per giorni di pioggia]]. Un albero che la morte [[2026-03-14-1025|non ha salvato dal taglio]]; e [[2026-03-26_0900|ancora morte]]. Rothko [[2026-03-20_1327|a Firenze]]. Fiorisce [[2026-03-28_1023|l'ornitogallo]].
-
 
 ### Febbraio.
 
