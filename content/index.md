@@ -5,6 +5,10 @@ date: ""
 
 *Trame* è un piccolo diario per testo, suoni e immagini del processo temporaneo Antonio Vigilante.
 
+### Aprile
+
+Ermes [[2026-04-03_1801|assaggia per la prima volta il miele]] e [[2026-04-20_1812|fa il suo primo acquisto]].  Osserviavo [[2026-04-18_1423|la trasformazione primaverile del parco]], che è ora [[20260421_1752|pieno di ranuncoli]]. La bellezza del [[2026-04-04_1940|lago d'Iseo]] – "il mio *laco* d'Iseo", dice Ermes – e il parco delle incisioni rupestri di [[2026-04-05_1122|Naquane]]. Trump continua [[2026-04-13|nella sua follia]].
+
 ### Marzo
 
 Gli Stati Uniti [[2026-03-01|uccidono bambine in una scuola iraniana]]. Pensieri [[2026-03-13|per giorni di pioggia]]. Un albero che la morte [[2026-03-14-1025|non ha salvato dal taglio]]; e [[2026-03-26_0900|ancora morte]]. Rothko [[2026-03-20_1327|a Firenze]]. Fiorisce [[2026-03-28_1023|l'ornitogallo]].
