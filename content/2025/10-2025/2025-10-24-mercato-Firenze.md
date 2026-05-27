@@ -1,5 +1,5 @@
 ---
-title: "2025-10-24"
+title: "24"
 date: 2025-10-24
 tags:
  - ottobre 2025
