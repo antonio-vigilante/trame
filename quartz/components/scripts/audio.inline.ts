@@ -78,8 +78,10 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
 
   // --- Event wiring ---
 
+  let seeking = false
+
   function updateProgress() {
-    if (!audio.duration) return
+    if (!audio.duration || seeking) return
     const pct = (audio.currentTime / audio.duration) * 100
     progressBar.value = String(pct)
     progressBar.style.setProperty("--pct", `${pct}%`)
@@ -114,10 +116,19 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
     }
   })
 
+  progressBar.addEventListener("pointerdown", () => { seeking = true })
+  progressBar.addEventListener("pointerup", () => { seeking = false })
+
   progressBar.addEventListener("input", () => {
     if (!audio.duration) return
+    const pct = Number(progressBar.value)
+    progressBar.style.setProperty("--pct", `${pct}%`)
+    timeDisplay.textContent = `${formatTime((pct / 100) * audio.duration)} / ${formatTime(audio.duration)}`
+  })
+
+  progressBar.addEventListener("change", () => {
+    if (!audio.duration) return
     audio.currentTime = (Number(progressBar.value) / 100) * audio.duration
-    progressBar.style.setProperty("--pct", `${progressBar.value}%`)
   })
 
   volumeSlider.addEventListener("input", () => {
