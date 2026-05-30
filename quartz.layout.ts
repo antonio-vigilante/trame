@@ -38,13 +38,36 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({ 
-      title: "Anni, mesi, giorni", // 1. Cambia il titolo
-      folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
-      folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
-    }), 
+    Component.Explorer({
+      title: "Anni, mesi, giorni",
+      folderDefaultState: "collapsed",
+      folderClickBehavior: "expand",
+      sortFn: (a, b) => {
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          // Month folders: MM-YYYY format → sort by date descending
+          const monthYear = /^(\d{2})-(\d{4})$/
+          const aM = a.slugSegment.match(monthYear)
+          const bM = b.slugSegment.match(monthYear)
+          if (aM && bM) {
+            const aDate = parseInt(aM[2]) * 100 + parseInt(aM[1])
+            const bDate = parseInt(bM[2]) * 100 + parseInt(bM[1])
+            return bDate - aDate
+          }
+          // Year folders: YYYY format → sort descending
+          const year = /^\d{4}$/
+          if (a.slugSegment.match(year) && b.slugSegment.match(year)) {
+            return parseInt(b.slugSegment) - parseInt(a.slugSegment)
+          }
+          // Default: alphabetical
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        return !a.isFolder && b.isFolder ? 1 : -1
+      },
+    }),
   ],
-  // All'interno del tuo file quartz.layout.ts, nella sezione defaultContentPageLayout
   right: [
     Component.Graph({
             localGraph: {
@@ -96,10 +119,31 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer({ 
-      title: "Anni, mesi, giorni", // 1. Cambia il titolo
-      folderDefaultState: "collapsed", // ⬅️ Stato iniziale: chiuso
-      folderClickBehavior: "expand",   // ⬅️ Click sul nome apre la cartella
+    Component.Explorer({
+      title: "Anni, mesi, giorni",
+      folderDefaultState: "collapsed",
+      folderClickBehavior: "expand",
+      sortFn: (a, b) => {
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          const monthYear = /^(\d{2})-(\d{4})$/
+          const aM = a.slugSegment.match(monthYear)
+          const bM = b.slugSegment.match(monthYear)
+          if (aM && bM) {
+            const aDate = parseInt(aM[2]) * 100 + parseInt(aM[1])
+            const bDate = parseInt(bM[2]) * 100 + parseInt(bM[1])
+            return bDate - aDate
+          }
+          const year = /^\d{4}$/
+          if (a.slugSegment.match(year) && b.slugSegment.match(year)) {
+            return parseInt(b.slugSegment) - parseInt(a.slugSegment)
+          }
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        return !a.isFolder && b.isFolder ? 1 : -1
+      },
     }),
   ],
   right: [],
