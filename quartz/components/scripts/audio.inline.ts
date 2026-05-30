@@ -9,7 +9,6 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   const wrapper = document.createElement("div")
   wrapper.className = "audio-player"
 
-  // Hidden native audio
   audio.removeAttribute("controls")
   wrapper.appendChild(audio)
 
@@ -20,10 +19,9 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   playBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M8 5v14l11-7z"/></svg>`
   wrapper.appendChild(playBtn)
 
-  // Progress area
+  // Progress bar
   const progressWrap = document.createElement("div")
   progressWrap.className = "audio-progress-wrap"
-
   const progressBar = document.createElement("input")
   progressBar.type = "range"
   progressBar.className = "audio-progress"
@@ -33,7 +31,6 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   progressBar.step = "0.1"
   progressBar.setAttribute("aria-label", "Posizione")
   progressWrap.appendChild(progressBar)
-
   wrapper.appendChild(progressWrap)
 
   // Time display
@@ -42,14 +39,12 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   timeDisplay.textContent = "0:00 / 0:00"
   wrapper.appendChild(timeDisplay)
 
-  // Volume control
+  // Volume
   const volumeWrap = document.createElement("div")
   volumeWrap.className = "audio-volume-wrap"
-
   const volumeIcon = document.createElement("span")
   volumeIcon.className = "audio-volume-icon"
   volumeIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>`
-
   const volumeSlider = document.createElement("input")
   volumeSlider.type = "range"
   volumeSlider.className = "audio-volume"
@@ -58,7 +53,6 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   volumeSlider.step = "0.05"
   volumeSlider.value = "1"
   volumeSlider.setAttribute("aria-label", "Volume")
-
   volumeWrap.appendChild(volumeIcon)
   volumeWrap.appendChild(volumeSlider)
   wrapper.appendChild(volumeWrap)
@@ -80,11 +74,15 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
 
   let seeking = false
 
+  function setPct(el: HTMLInputElement, pct: number) {
+    el.style.setProperty("--pct", `${pct}%`)
+  }
+
   function updateProgress() {
     if (!audio.duration || seeking) return
     const pct = (audio.currentTime / audio.duration) * 100
     progressBar.value = String(pct)
-    progressBar.style.setProperty("--pct", `${pct}%`)
+    setPct(progressBar, pct)
     timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`
   }
 
@@ -109,33 +107,30 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
   audio.addEventListener("ended", onEnded)
 
   playBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play()
-    } else {
-      audio.pause()
-    }
+    if (audio.paused) audio.play()
+    else audio.pause()
   })
 
+  // Seeking: block timeupdate interference during drag.
+  // Listen on window for pointerup so it fires even if pointer leaves the element.
   progressBar.addEventListener("pointerdown", () => { seeking = true })
-  progressBar.addEventListener("pointerup", () => { seeking = false })
+
+  function onWindowPointerUp() { seeking = false }
+  window.addEventListener("pointerup", onWindowPointerUp)
 
   progressBar.addEventListener("input", () => {
     if (!audio.duration) return
     const pct = Number(progressBar.value)
-    progressBar.style.setProperty("--pct", `${pct}%`)
-    timeDisplay.textContent = `${formatTime((pct / 100) * audio.duration)} / ${formatTime(audio.duration)}`
-  })
-
-  progressBar.addEventListener("change", () => {
-    if (!audio.duration) return
-    audio.currentTime = (Number(progressBar.value) / 100) * audio.duration
+    setPct(progressBar, pct)
+    audio.currentTime = (pct / 100) * audio.duration
+    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`
   })
 
   volumeSlider.addEventListener("input", () => {
     audio.volume = Number(volumeSlider.value)
-    volumeSlider.style.setProperty("--pct", `${Number(volumeSlider.value) * 100}%`)
+    setPct(volumeSlider, Number(volumeSlider.value) * 100)
   })
-  volumeSlider.style.setProperty("--pct", "100%")
+  setPct(volumeSlider, 100)
 
   speedSelect.addEventListener("change", () => {
     audio.playbackRate = Number(speedSelect.value)
@@ -147,6 +142,7 @@ function buildPlayer(audio: HTMLAudioElement): HTMLElement {
     audio.removeEventListener("play", onPlay)
     audio.removeEventListener("pause", onPause)
     audio.removeEventListener("ended", onEnded)
+    window.removeEventListener("pointerup", onWindowPointerUp)
   })
 
   return wrapper
