@@ -20,11 +20,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
-      cdnCaching: true,
+      fontOrigin: "local",
+      cdnCaching: false,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "IBM Plex Mono",
+        header: "TeX Gyre Pagella",
+        body: "TeX Gyre Pagella",
         code: "IBM Plex Mono",
       },
       colors: {

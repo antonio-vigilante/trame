@@ -66,6 +66,27 @@ export async function getSatoriFonts(headerFont: FontSpecification, bodyFont: Fo
 }
 
 /**
+ * Try loading a font from quartz/static/fonts/ using the TeX Gyre naming convention.
+ * Normalizes font name (removes spaces, lowercases) and maps weight to "regular"/"bold".
+ */
+async function loadLocalFont(rawFontName: string, weight: FontWeight): Promise<Buffer | undefined> {
+  const normalizedName = rawFontName.replaceAll(" ", "").toLowerCase()
+  const weightName = Number(weight) >= 600 ? "bold" : "regular"
+  const fontsDir = path.join(QUARTZ, "static", "fonts")
+
+  for (const ext of ["otf", "ttf", "woff2", "woff"]) {
+    const filepath = path.join(fontsDir, `${normalizedName}-${weightName}.${ext}`)
+    try {
+      await fs.access(filepath)
+      return fs.readFile(filepath)
+    } catch {
+      // not found, try next extension
+    }
+  }
+  return undefined
+}
+
+/**
  * Get the `.ttf` file of a google font
  * @param fontName name of google font
  * @param weight what font weight to fetch font
@@ -75,6 +96,10 @@ export async function fetchTtf(
   rawFontName: string,
   weight: FontWeight,
 ): Promise<Buffer<ArrayBufferLike> | undefined> {
+  // Try local static/fonts/ directory first (for non-Google fonts)
+  const localFont = await loadLocalFont(rawFontName, weight)
+  if (localFont) return localFont
+
   const fontName = rawFontName.replaceAll(" ", "+")
   const cacheKey = `${fontName}-${weight}`
   const cacheDir = path.join(QUARTZ, ".quartz-cache", "fonts")
