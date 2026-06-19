@@ -99,6 +99,7 @@ export const defaultContentPageLayout: PageLayout = {
     fontSize: 0.6,
     opacityScale: 1,
     removeTags: [], // what tags to remove from the graph
+    removeSlugs: ["index"], // exclude home page (too many links, distorts the graph)
     showTags: true, // whether to show tags in the graph
     enableRadial: true, // whether to constrain the graph, similar to Obsidian
   },

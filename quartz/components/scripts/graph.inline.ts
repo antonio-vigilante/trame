@@ -84,6 +84,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     fontSize,
     opacityScale,
     removeTags,
+    removeSlugs,
     showTags,
     focusOnHover,
     enableRadial,
@@ -95,6 +96,12 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       v,
     ]),
   )
+
+  // Remove explicitly excluded slugs from the graph
+  for (const slug of removeSlugs ?? []) {
+    data.delete(slug as SimpleSlug)
+  }
+
   const links: SimpleLinkData[] = []
   const tags: SimpleSlug[] = []
   const validLinks = new Set(data.keys())
@@ -596,6 +603,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   })
 
   const containers = [...document.getElementsByClassName("global-graph-outer")] as HTMLElement[]
+
   async function renderGlobalGraph() {
     const slug = getFullSlug(window)
     for (const container of containers) {
@@ -608,6 +616,8 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
       const graphContainer = container.querySelector(".global-graph-container") as HTMLElement
       registerEscapeHandler(container, hideGlobalGraph)
       if (graphContainer) {
+        // Wait one frame so the browser computes dimensions after display:none → inline-block
+        await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
         globalGraphCleanups.push(await renderGraph(graphContainer, slug))
       }
     }
