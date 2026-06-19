@@ -9,6 +9,10 @@ body {
 .page-title {
   text-align: center;
   width: 100%;
+
+  @media ($mobile) {
+    text-align: left;
+  }
 }
 
 h1, h2, h3 {
