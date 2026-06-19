@@ -20,19 +20,19 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local",
+      fontOrigin: "googleFonts",
       cdnCaching: false,
       typography: {
-        header: "TeX Gyre Pagella",
-        body: "TeX Gyre Pagella",
+        header: { name: "Merriweather", weights: [400, 700] },
+        body: { name: "Merriweather", weights: [400, 700], includeItalic: true },
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#ffffff",
-          lightgray: "#e5e5e5",
+          light: "#faf7f2",
+          lightgray: "#e8e4dd",
           gray: "#b8b8b8",
-          darkgray: "#000000",
+          darkgray: "#1c1810",
           dark: "#2b2b2b",
           secondary: "#284b63",
           tertiary: "#84a59d",
@@ -40,7 +40,7 @@ const config: QuartzConfig = {
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
+          light: "#181512",
           lightgray: "#393639",
           gray: "#646464",
           darkgray: "#d4d4d4",

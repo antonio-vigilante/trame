@@ -2,36 +2,19 @@
 
 // put your custom CSS here!
 
-@font-face {
-  font-family: "TeX Gyre Pagella";
-  src: url("/static/fonts/texgyrepagella-regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+// prose più ariosa
+article {
+  p, li {
+    line-height: 1.75rem;
+  }
 }
 
-@font-face {
-  font-family: "TeX Gyre Pagella";
-  src: url("/static/fonts/texgyrepagella-italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+.page {
+  max-width: 1350px;
 }
 
-@font-face {
-  font-family: "TeX Gyre Pagella";
-  src: url("/static/fonts/texgyrepagella-bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-columns: 270px auto 270px;
+  }
 }
-
-@font-face {
-  font-family: "TeX Gyre Pagella";
-  src: url("/static/fonts/texgyrepagella-bolditalic.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-
