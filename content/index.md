@@ -1,5 +1,5 @@
 ---
-title: delle piccole cose
+title: Trame
 date: ""
 ---
 

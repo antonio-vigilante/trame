@@ -21,7 +21,10 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs({ showCurrentPage: false }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
       condition: (page) => page.fileData.slug !== "index",
