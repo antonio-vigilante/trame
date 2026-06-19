@@ -47,6 +47,10 @@ article {
   }
 }
 
+body[data-slug="index"] article {
+  padding-top: 2rem;
+}
+
 @media (min-width: 1200px) {
   .page > #quartz-body {
     grid-template-columns: 270px auto 270px;
