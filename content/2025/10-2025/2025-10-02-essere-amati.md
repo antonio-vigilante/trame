@@ -2,7 +2,6 @@
 title: "02"
 date: 2025-10-02
 tags:
- - ottobre 2025
  - amore
 ---
 

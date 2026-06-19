@@ -2,7 +2,6 @@
 title: "24"
 date: 2025-10-24
 tags:
- - ottobre 2025
  - Firenze
  - mercato
 ---
