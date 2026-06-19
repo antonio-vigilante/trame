@@ -22,7 +22,10 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.TagList(),
   ],
   left: [
@@ -42,6 +45,7 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Anni, mesi, giorni",
       folderDefaultState: "collapsed",
       folderClickBehavior: "expand",
+      useSavedState: false,
       sortFn: (a, b) => {
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
           // Month folders: MM-YYYY format → sort by date descending
@@ -123,6 +127,7 @@ export const defaultListPageLayout: PageLayout = {
       title: "Anni, mesi, giorni",
       folderDefaultState: "collapsed",
       folderClickBehavior: "expand",
+      useSavedState: false,
       sortFn: (a, b) => {
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
           const monthYear = /^(\d{2})-(\d{4})$/
