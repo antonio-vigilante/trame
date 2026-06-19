@@ -76,39 +76,47 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
+    Component.Tagline(),
     Component.Graph({
-            localGraph: {
-    drag: true, // whether to allow panning the view around
-    zoom: true, // whether to allow zooming in and out
-    depth: 1, // how many hops of notes to display
-    scale: 1.1, // default view scale
-    repelForce: 0.5, // how much nodes should repel each other
-    centerForce: 0.3, // how much force to use when trying to center the nodes
-    linkDistance: 30, // how long should the links be by default?
-    fontSize: 0.6, // what size should the node labels be?
-    opacityScale: 1, // how quickly do we fade out the labels when zooming out?
-    removeTags: [], // what tags to remove from the graph
-    showTags: true, // whether to show tags in the graph
-    enableRadial: false, // whether to constrain the graph, similar to Obsidian
-  },
-  globalGraph: {
-    drag: true,
-    zoom: true,
-    depth: -1,
-    scale: 0.9,
-    repelForce: 0.5,
-    centerForce: 0.3,
-    linkDistance: 30,
-    fontSize: 0.6,
-    opacityScale: 1,
-    removeTags: [], // what tags to remove from the graph
-    removeSlugs: ["/"], // exclude home page (too many links, distorts the graph)
-    showTags: true, // whether to show tags in the graph
-    enableRadial: true, // whether to constrain the graph, similar to Obsidian
-  },
+      localGraph: {
+        drag: true,
+        zoom: true,
+        depth: 1,
+        scale: 1.1,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        showTags: true,
+        enableRadial: false,
+      },
+      globalGraph: {
+        drag: true,
+        zoom: true,
+        depth: -1,
+        scale: 0.9,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        removeSlugs: ["/"],
+        showTags: true,
+        focusOnHover: true,
+        enableRadial: true,
+      },
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.TableOfContents()),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.Backlinks(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
 }
 

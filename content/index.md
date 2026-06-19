@@ -3,11 +3,22 @@ title: Trame
 date: ""
 ---
 
-*Trame* è un piccolo diario per testo, suoni e immagini del processo temporaneo Antonio Vigilante.
+<div class="index-graph-outer">
+  <div class="graph-container" data-cfg='{"drag":false,"zoom":false,"depth":-1,"scale":0.9,"repelForce":0.5,"centerForce":0.3,"linkDistance":25,"fontSize":0.4,"opacityScale":1,"removeTags":[],"removeSlugs":["/"],"showTags":false,"focusOnHover":false,"enableRadial":true}'></div>
+  <button class="global-graph-icon index-graph-expand" aria-label="Apri il grafo completo">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 55" fill="currentColor">
+      <path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z"/>
+    </svg>
+  </button>
+</div>
+
+### Maggio
+
+La pace di [[2026-05-01_162505|Ponte allo Spino]] e dell'[[2026-05-17_1346|Orto dei Pecci]] e il [[2026-05-13_2047|compleanno di Xho]] ad Arezzo. Con Ermes si parla del [[2026-05-26_2257|diritto alla vita degli insetti]]. Un esserino fragile morto, sulla via.
 
 ### Aprile
 
-Ermes [[2026-04-03_1801|assaggia per la prima volta il miele]] e [[2026-04-20_1812|fa il suo primo acquisto]].  Osserviavo [[2026-04-18_1423|la trasformazione primaverile del parco]], che è ora [[20260421_1752|pieno di ranuncoli]]. La bellezza del [[2026-04-04_1940|lago d'Iseo]] – "il mio *laco* d'Iseo", dice Ermes – e il parco delle incisioni rupestri di [[2026-04-05_1122|Naquane]]. Trump continua [[2026-04-13|nella sua follia]].
+Ermes [[2026-04-03_1801|assaggia per la prima volta il miele]] e [[2026-04-20_1812|fa il suo primo acquisto]].  Osserviamo [[2026-04-18_1423|la trasformazione primaverile del parco]], che è ora [[20260421_1752|pieno di ranuncoli]]. La bellezza del [[2026-04-04_1940|lago d'Iseo]] – "il mio *laco* d'Iseo", dice Ermes – e il parco delle incisioni rupestri di [[2026-04-05_1122|Naquane]]. Trump continua [[2026-04-13|nella sua follia]].
 
 ### Marzo
 

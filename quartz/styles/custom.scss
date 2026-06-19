@@ -48,7 +48,67 @@ article {
 }
 
 body[data-slug="index"] article {
-  padding-top: 2rem;
+  padding-top: 0;
+}
+
+.sidebar-tagline {
+  font-size: 1rem;
+  color: var(--dark);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Su tutte le pagine tranne index, la tagline non serve */
+body:not([data-slug="index"]) .sidebar.right .sidebar-tagline {
+  display: none;
+}
+
+/* Su index, nascondiamo il riquadro grafo nella sidebar (ma non il modal globale) */
+body[data-slug="index"] .sidebar.right .graph > h3,
+body[data-slug="index"] .sidebar.right .graph > .graph-outer {
+  display: none;
+}
+
+.index-graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  height: 200px;
+  margin: 0 0 2.5rem;
+  position: relative;
+  overflow: hidden;
+
+  .graph-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .index-graph-expand {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--dark);
+    opacity: 0.45;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    padding: 0.2rem;
+    margin: 0.3rem;
+    top: 0;
+    right: 0;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      background-color: var(--lightgray);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
