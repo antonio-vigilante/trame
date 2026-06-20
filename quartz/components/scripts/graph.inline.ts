@@ -171,6 +171,13 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   const width = graph.offsetWidth || graph.parentElement?.offsetWidth || 300
   const height = Math.max(graph.offsetHeight, 250)
 
+  // DEBUG: show dimensions and CSS var values directly on screen
+  const _dbg = document.createElement("div")
+  _dbg.style.cssText = "position:absolute;top:0;left:0;background:rgba(255,255,255,0.9);font-size:9px;padding:2px;z-index:9999;pointer-events:none;"
+  const _sec = getComputedStyle(document.documentElement).getPropertyValue("--secondary")
+  _dbg.textContent = `w:${width} h:${height} dpr:${window.devicePixelRatio} sec:"${_sec}" nodes:${graphData.nodes.length}`
+  graph.appendChild(_dbg)
+
   // we virtualize the simulation and use pixi to actually render it
   const simulation: Simulation<NodeData, LinkData> = forceSimulation<NodeData>(graphData.nodes)
     .force("charge", forceManyBody().strength(-100 * repelForce))
