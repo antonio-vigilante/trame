@@ -168,7 +168,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       })),
   }
 
-  const width = graph.offsetWidth
+  const width = graph.offsetWidth || graph.parentElement?.offsetWidth || 300
   const height = Math.max(graph.offsetHeight, 250)
 
   // we virtualize the simulation and use pixi to actually render it
@@ -588,6 +588,8 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
     for (const container of localGraphContainers) {
+      // Wait one frame so the browser computes layout (offsetWidth/Height) before reading dimensions
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
       localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
     }
   }
