@@ -599,17 +599,33 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const slug = e.detail.url
   addToVisited(simplifySlug(slug))
 
+  // DEBUG: mark outer container red when nav fires
+  const outerDebug = document.querySelector(".index-graph-outer") as HTMLElement | null
+  if (outerDebug) outerDebug.style.background = "red"
+
   async function renderLocalGraph() {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
+
+    // DEBUG: mark outer yellow when containers are searched
+    if (outerDebug) outerDebug.style.background = "yellow"
+
     for (const container of localGraphContainers) {
+      const el = container as HTMLElement
+      // DEBUG: mark found container blue
+      el.style.outline = "3px solid blue"
+
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
       try {
-        localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
-      } catch (e) {
-        const el = container as HTMLElement
+        // DEBUG: mark outer green before renderGraph
+        if (outerDebug) outerDebug.style.background = "lightgreen"
+        localGraphCleanups.push(await renderGraph(el, slug))
+        // DEBUG: clear background after successful render
+        if (outerDebug) outerDebug.style.background = ""
+      } catch (err) {
+        if (outerDebug) outerDebug.style.background = "orange"
         el.style.cssText = "display:flex;align-items:center;justify-content:center;font-size:11px;color:#900;padding:8px;box-sizing:border-box;"
-        el.textContent = "Errore grafo: " + String(e)
+        el.textContent = "Errore grafo: " + String(err)
       }
     }
   }
