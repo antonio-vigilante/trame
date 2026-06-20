@@ -603,11 +603,15 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
     for (const container of localGraphContainers) {
-      // Skip containers hidden via display:none (offsetParent is null when any ancestor is display:none)
       if ((container as HTMLElement).offsetParent === null) continue
-      // Wait one frame so the browser computes layout dimensions before reading offsetWidth/Height
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
-      localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
+      try {
+        localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
+      } catch (e) {
+        const el = container as HTMLElement
+        el.style.cssText = "display:flex;align-items:center;justify-content:center;font-size:11px;color:#900;padding:8px;box-sizing:border-box;"
+        el.textContent = "Errore grafo: " + String(e)
+      }
     }
   }
 
