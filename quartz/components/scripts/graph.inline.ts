@@ -552,6 +552,11 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     )
   }
 
+  // DEBUG: test circle to verify Pixi renderer works at all
+  const _testGfx = new Graphics()
+  _testGfx.circle(width / 2, height / 2, 15).fill({ color: 0xff0000 })
+  stage.addChild(_testGfx)
+
   let stopAnimation = false
   function animate(time: number) {
     if (stopAnimation) return
