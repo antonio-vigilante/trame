@@ -39,11 +39,14 @@ export class FileTrieNode<T extends FileTrieData = ContentDetails> {
   }
 
   get slug(): FullSlug {
+    // Leaf nodes: return the actual URL slug from the file data
+    if (!this.isFolder && this.data?.slug) {
+      return this.data.slug as FullSlug
+    }
     const path = joinSegments(...this.slugSegments) as FullSlug
     if (this.isFolder) {
       return joinSegments(path, "index") as FullSlug
     }
-
     return path
   }
 
@@ -86,7 +89,11 @@ export class FileTrieNode<T extends FileTrieData = ContentDetails> {
 
   // Add new file to trie
   add(file: T) {
-    this.insert(file.slug.split("/"), file)
+    // Build tree from filePath (preserves year/month hierarchy) rather than slug (which is flat)
+    const treePath = file.filePath
+      ? file.filePath.replace(/\.(md|html)$/, "").split("/").filter(Boolean)
+      : file.slug.split("/")
+    this.insert(treePath, file)
   }
 
   findNode(path: string[]): FileTrieNode<T> | undefined {
