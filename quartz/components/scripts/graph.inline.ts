@@ -603,7 +603,6 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
     for (const container of localGraphContainers) {
-      if ((container as HTMLElement).offsetParent === null) continue
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
       try {
         localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
