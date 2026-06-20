@@ -364,32 +364,17 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   tweens.clear()
 
   const app = new Application()
-  // Try WebGPU first; fall back to WebGL if it fails (common on Android/iOS)
-  try {
-    await app.init({
-      width,
-      height,
-      antialias: true,
-      autoStart: false,
-      autoDensity: true,
-      backgroundAlpha: 0,
-      preference: "webgpu",
-      resolution: window.devicePixelRatio,
-      eventMode: "static",
-    })
-  } catch {
-    await app.init({
-      width,
-      height,
-      antialias: true,
-      autoStart: false,
-      autoDensity: true,
-      backgroundAlpha: 0,
-      preference: "webgl",
-      resolution: window.devicePixelRatio,
-      eventMode: "static",
-    })
-  }
+  await app.init({
+    width,
+    height,
+    antialias: true,
+    autoStart: false,
+    autoDensity: true,
+    backgroundAlpha: 0,
+    preference: "webgl",
+    resolution: window.devicePixelRatio,
+    eventMode: "static",
+  })
   graph.appendChild(app.canvas)
 
   const stage = app.stage
