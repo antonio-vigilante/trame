@@ -588,7 +588,9 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
     for (const container of localGraphContainers) {
-      // Wait one frame so the browser computes layout (offsetWidth/Height) before reading dimensions
+      // Skip containers hidden via display:none (offsetParent is null when any ancestor is display:none)
+      if ((container as HTMLElement).offsetParent === null) continue
+      // Wait one frame so the browser computes layout dimensions before reading offsetWidth/Height
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
       localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
     }
