@@ -171,13 +171,6 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   const width = graph.offsetWidth || graph.parentElement?.offsetWidth || 300
   const height = Math.max(graph.offsetHeight, 250)
 
-  // DEBUG: show dimensions and CSS var values directly on screen
-  const _dbg = document.createElement("div")
-  _dbg.style.cssText = "position:absolute;top:0;left:0;background:rgba(255,255,255,0.9);font-size:9px;padding:2px;z-index:9999;pointer-events:none;"
-  const _sec = getComputedStyle(document.documentElement).getPropertyValue("--secondary")
-  _dbg.textContent = `w:${width} h:${height} dpr:${window.devicePixelRatio} sec:"${_sec}" nodes:${graphData.nodes.length}`
-  graph.appendChild(_dbg)
-
   // we virtualize the simulation and use pixi to actually render it
   const simulation: Simulation<NodeData, LinkData> = forceSimulation<NodeData>(graphData.nodes)
     .force("charge", forceManyBody().strength(-100 * repelForce))
@@ -537,11 +530,6 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     )
   }
 
-  // DEBUG: test circle to verify Pixi renderer works at all
-  const _testGfx = new Graphics()
-  _testGfx.circle(width / 2, height / 2, 15).fill({ color: 0xff0000 })
-  stage.addChild(_testGfx)
-
   let stopAnimation = false
   function animate(time: number) {
     if (stopAnimation) return
@@ -596,34 +584,12 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const slug = e.detail.url
   addToVisited(simplifySlug(slug))
 
-  // DEBUG: mark outer container red when nav fires
-  const outerDebug = document.querySelector(".index-graph-outer") as HTMLElement | null
-  if (outerDebug) outerDebug.style.background = "red"
-
   async function renderLocalGraph() {
     cleanupLocalGraphs()
     const localGraphContainers = document.getElementsByClassName("graph-container")
-
-    // DEBUG: mark outer yellow when containers are searched
-    if (outerDebug) outerDebug.style.background = "yellow"
-
     for (const container of localGraphContainers) {
-      const el = container as HTMLElement
-      // DEBUG: mark found container blue
-      el.style.outline = "3px solid blue"
-
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
-      try {
-        // DEBUG: mark outer green before renderGraph
-        if (outerDebug) outerDebug.style.background = "lightgreen"
-        localGraphCleanups.push(await renderGraph(el, slug))
-        // DEBUG: clear background after successful render
-        if (outerDebug) outerDebug.style.background = ""
-      } catch (err) {
-        if (outerDebug) outerDebug.style.background = "orange"
-        el.style.cssText = "display:flex;align-items:center;justify-content:center;font-size:11px;color:#900;padding:8px;box-sizing:border-box;"
-        el.textContent = "Errore grafo: " + String(err)
-      }
+      localGraphCleanups.push(await renderGraph(container as HTMLElement, slug))
     }
   }
 
