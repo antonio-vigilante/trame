@@ -46,9 +46,9 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       title: "Anni, mesi, giorni",
-      folderDefaultState: "collapsed",
-      folderClickBehavior: "expand",
-      useSavedState: false,
+      folderDefaultState: "open",
+      folderClickBehavior: "link", 
+      useSavedState: true,
       sortFn: (a, b) => {
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
           // Month folders: MM-YYYY format → sort by date descending
