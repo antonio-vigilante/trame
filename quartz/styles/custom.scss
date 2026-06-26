@@ -4,7 +4,7 @@
 // put your custom CSS here!
 
 body {
-  background-color: #999090;
+  background-color: var(--light);
 }
 
 .page-title {
@@ -28,7 +28,11 @@ article {
 }
 
 .sidebar.left {
-  background-color: #d4cdc8;
+  background-color: #f4f4f4;
+}
+
+[saved-theme="dark"] .sidebar.left {
+  background-color: #211e1b;
 }
 
 .page {
@@ -52,7 +56,7 @@ body[data-slug="index"] article {
 }
 
 .sidebar-tagline {
-  font-size: 1rem;
+  font-size: 0.82rem;
   color: var(--dark);
   line-height: 1.65;
   margin: 0;
