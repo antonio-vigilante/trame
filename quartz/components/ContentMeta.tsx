@@ -25,33 +25,31 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
+    const segments: (string | JSX.Element)[] = []
 
-    if (text) {
-      const segments: (string | JSX.Element)[] = []
+    if (fileData.dates) {
+      const d = getDate(cfg, fileData)!
+      const label = d.toLocaleDateString(cfg.locale, { year: "numeric", month: "long" })
+      segments.push(<time datetime={d.toISOString()}>{label}</time>)
+    }
 
-      if (fileData.dates) {
-        const d = getDate(cfg, fileData)!
-        const label = d.toLocaleDateString(cfg.locale, { year: "numeric", month: "long" })
-        segments.push(<time datetime={d.toISOString()}>{label}</time>)
-      }
+    if (text && options.showReadingTime) {
+      const { minutes, words: _words } = readingTime(text)
+      const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
+        minutes: Math.ceil(minutes),
+      })
+      segments.push(<span>{displayedTime}</span>)
+    }
 
-      // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
-        })
-        segments.push(<span>{displayedTime}</span>)
-      }
-
-      return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segments}
-        </p>
-      )
-    } else {
+    if (segments.length === 0) {
       return null
     }
+
+    return (
+      <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+        {segments}
+      </p>
+    )
   }
 
   ContentMetadata.css = style
