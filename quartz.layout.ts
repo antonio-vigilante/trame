@@ -47,7 +47,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer({
       title: "Anni, mesi, giorni",
       folderDefaultState: "open",
-      folderClickBehavior: "link", 
+      folderClickBehavior: "collapse",
       useSavedState: true,
       sortFn: (a, b) => {
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
