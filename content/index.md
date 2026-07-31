@@ -12,9 +12,13 @@ date: ""
   </button>
 </div>
 
+### Giugno
+
+Fioriscono la [[2026-06-05_1635|catalpa]] e [[2026-06-15_1651|l'acanto]]: e il parlottare amico delle [[2026-06-27_0934|cicale]]. Cerco di insegnare a Ermes [[2026-06-14_1229|la parola magica]], che non è *abracadabra*. Una [[2026-06-07|diversa prospettiva]], che occorre che mi diventi sangue e respiro. Un [[2026-06-15_0942|esserino morto]], sulla via.
+
 ### Maggio
 
-La pace di [[2026-05-01_162505|Ponte allo Spino]] e dell'[[2026-05-17_1346|Orto dei Pecci]] e il [[2026-05-13_2047|compleanno di Xho]] ad Arezzo. Con Ermes si parla del [[2026-05-26_2257|diritto alla vita degli insetti]]. Un esserino fragile morto, sulla via.
+La pace di [[2026-05-01_162505|Ponte allo Spino]] e dell'[[2026-05-17_1346|Orto dei Pecci]] e il [[2026-05-13_2047|compleanno di Xho]] ad Arezzo. Con Ermes si parla del [[2026-05-26_2257|diritto alla vita degli insetti]]. Un [[2026-05-23_1427|esserino morto]], sulla via.
 
 ### Aprile
 
