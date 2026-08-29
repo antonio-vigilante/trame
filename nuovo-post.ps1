@@ -28,20 +28,45 @@ $videoFile = Get-ChildItem $inboxDir |
     Sort-Object LastWriteTime -Descending |
     Select-Object -First 1
 
-# Estrai timestamp dal nome file (formato Android: YYYYMMDD_HHmmSS)
+# Estrai timestamp dal nome file. Supporta sia il formato Android grezzo
+# (YYYYMMDD_HHmmSS) sia il formato con trattini usato per rinominare i media
+# (YYYY-MM-DD_HHmm o YYYY-MM-DD_HHmmSS).
 function Get-TsFromName($file) {
-    if ($file -and $file.BaseName -match "^(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$") {
+    if (-not $file) { return $null }
+    $name = $file.BaseName
+
+    if ($name -match "^(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})$") {
         try {
             return [DateTime]::new([int]$Matches[1], [int]$Matches[2], [int]$Matches[3],
                                    [int]$Matches[4], [int]$Matches[5], [int]$Matches[6])
         } catch {}
     }
+
+    if ($name -match "^(\d{4})-(\d{2})-(\d{2})_(\d{2})(\d{2})(\d{2})?$") {
+        $sec = if ($Matches[6]) { [int]$Matches[6] } else { 0 }
+        try {
+            return [DateTime]::new([int]$Matches[1], [int]$Matches[2], [int]$Matches[3],
+                                   [int]$Matches[4], [int]$Matches[5], $sec)
+        } catch {}
+    }
+
     return $null
 }
 
 $ts = Get-TsFromName $imageFile
 if (-not $ts) { $ts = Get-TsFromName $audioFile }
 if (-not $ts) { $ts = Get-TsFromName $videoFile }
+
+# Se il nome file non contiene una data riconoscibile, usa la data di
+# modifica del file (più affidabile della data odierna, che riflette solo
+# quando è stato lanciato lo script).
+if (-not $ts) {
+    $sourceFile = $imageFile
+    if (-not $sourceFile) { $sourceFile = $audioFile }
+    if (-not $sourceFile) { $sourceFile = $videoFile }
+    if ($sourceFile) { $ts = $sourceFile.LastWriteTime }
+}
+
 if (-not $ts) { $ts = Get-Date }
 
 $year     = $ts.ToString("yyyy")
