@@ -12,6 +12,11 @@ date: ""
   </button>
 </div>
 
+### Luglio
+
+Traduco [[2026-07-09_1923|Ambedkar]] e penso agli [[2026-07-15_0649|elementi primi]]. Un uomo [[2026-07-19_2001|ucciso dalla polizia]]. [[2026-07-12_2052|Un cantastorie]] alla feste medievale di Monteriggioni. E dell'[[2026-07-09_1923|oro]] inaspettato. Con Ermes si parla [[2026-07-05_1015|di sogni e di parole]].
+
+
 ### Giugno
 
 Fioriscono la [[2026-06-05_1635|catalpa]] e [[2026-06-15_1651|l'acanto]]: e il parlottare amico delle [[2026-06-27_0934|cicale]]. Cerco di insegnare a Ermes [[2026-06-14_1229|la parola magica]], che non è *abracadabra*. Una [[2026-06-07|diversa prospettiva]], che occorre che mi diventi sangue e respiro. Un [[2026-06-15_0942|esserino morto]], sulla via.
