@@ -230,6 +230,22 @@ if ($videoFile) {
 # Sposta audio
 $audioBlock = ""
 if ($audioFile) {
+    # I .wav sono troppo grandi per Cloudflare Pages (limite 25 MiB per file):
+    # convertili in .mp3 con ffmpeg prima di spostarli.
+    if ($audioFile.Extension.ToLower() -eq ".wav") {
+        if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) {
+            Write-Error "ffmpeg non trovato: impossibile convertire $($audioFile.Name) in mp3."
+            exit 1
+        }
+        $mp3Path = Join-Path $audioFile.DirectoryName "$($audioFile.BaseName).mp3"
+        & ffmpeg -hide_banner -loglevel error -y -i $audioFile.FullName -codec:a libmp3lame -q:a 4 $mp3Path
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Conversione di $($audioFile.Name) fallita."
+            exit 1
+        }
+        Remove-Item $audioFile.FullName
+        $audioFile = Get-Item $mp3Path
+    }
     $dest = Join-Path $root "content\audio\$($audioFile.Name)"
     Move-Item $audioFile.FullName $dest -Force
     $ext  = $audioFile.Extension.TrimStart('.').ToLower()
