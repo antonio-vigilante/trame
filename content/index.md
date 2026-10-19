@@ -12,6 +12,10 @@ date: ""
   </button>
 </div>
 
+### Agosto
+
+Muore [[2026-08-08_0750|Guccini]]. A Murlo [[2026-08-16_2237|guardiamo le stelle cadenti]]. A Klagenfurt [[2026-08-20_1350|mettiamo i piedi a mollo in un canale]. Vienna è piena di cose belle. Le opere di Pieter Bruegel il Vecchio al [[2026-08-22_1343|Kunsthistorisches Museum]] e quelle di Schiele alla [[2026-08-23_1200|Österreichische Galerie Belvedere]]. E ancora [[2026-08-25_1549|Lubiana]] e la bellezza di [[2026-08-25_2041|Trieste]].
+
 ### Luglio
 
 Traduco [[2026-07-09_1923|Ambedkar]] e penso agli [[2026-07-15_0649|elementi primi]]. Un uomo [[2026-07-19_2001|ucciso dalla polizia]]. [[2026-07-12_2052|Un cantastorie]] alla feste medievale di Monteriggioni. E dell'[[2026-07-09_1923|oro]] inaspettato. Con Ermes si parla [[2026-07-05_1015|di sogni e di parole]].
