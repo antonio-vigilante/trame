@@ -12,6 +12,11 @@ date: ""
   </button>
 </div>
 
+### Settembre
+
+A Volterra [[2026-09-09_0953|parlo di scuola]] ai docenti di un liceo di Firenze. Con Ermes [[2026-09-16_1600|si parla di parole]]. Una finestra [[2026-09-09_0800|a Colle Val d'Elsa]].
+
+
 ### Agosto
 
 Muore [[2026-08-08_0750|Guccini]]. A Murlo [[2026-08-16_2237|guardiamo le stelle cadenti]]. A Klagenfurt [[2026-08-20_1350|mettiamo i piedi a mollo in un canale]]. Vienna è piena di cose belle. Le opere di Pieter Bruegel il Vecchio al [[2026-08-22_1343|Kunsthistorisches Museum]] e quelle di Schiele alla [[2026-08-23_1200|Österreichische Galerie Belvedere]]. E ancora [[2026-08-25_1549|Lubiana]] e la bellezza di [[2026-08-25_2041|Trieste]].
