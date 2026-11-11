@@ -2,7 +2,8 @@
 # Uso: .\nuovo-post.ps1                       (apre il calendario sulla data rilevata)
 #      .\nuovo-post.ps1 -Data "2026-10-09 16:15"
 #      .\nuovo-post.ps1 -Data "09/10/2026 16.15"
-# Metti i media in inbox/ prima di lanciarlo.
+# Metti i media in inbox/ prima di lanciarlo. Tutte le immagini presenti
+# finiscono nel post; per audio e video viene preso solo il piu' recente.
 
 param(
     [string]$Data
@@ -19,11 +20,6 @@ $imageExt = @(".jpg", ".jpeg", ".png", ".webp")
 $audioExt = @(".m4a", ".mp3", ".ogg", ".wav")
 $videoExt = @(".mp4", ".mov", ".mkv", ".webm")
 
-$imageFile = Get-ChildItem $inboxDir |
-    Where-Object { $imageExt -contains $_.Extension.ToLower() } |
-    Sort-Object LastWriteTime -Descending |
-    Select-Object -First 1
-
 $audioFile = Get-ChildItem $inboxDir |
     Where-Object { $audioExt -contains $_.Extension.ToLower() } |
     Sort-Object LastWriteTime -Descending |
@@ -39,7 +35,9 @@ $videoFile = Get-ChildItem $inboxDir |
 # rinominare i media (YYYY-MM-DD_HHmm o YYYY-MM-DD_HHmmSS).
 function Get-TsFromName($file) {
     if (-not $file) { return $null }
-    $name = $file.BaseName
+    # Rimuove caratteri invisibili di formattazione (es. U+200E/U+200F, marcatori
+    # di direzione che finiscono nei nomi copiati da telefono/WhatsApp).
+    $name = $file.BaseName -replace '\p{Cf}', ''
 
     if ($name -match "^(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})?$") {
         $sec = if ($Matches[6]) { [int]$Matches[6] } else { 0 }
@@ -59,6 +57,13 @@ function Get-TsFromName($file) {
 
     return $null
 }
+
+# Tutte le immagini in inbox, in ordine cronologico (data dal nome se
+# presente, altrimenti data di modifica). La prima determina la data del post.
+$imageFiles = @(Get-ChildItem $inboxDir |
+    Where-Object { $imageExt -contains $_.Extension.ToLower() } |
+    Sort-Object { $t = Get-TsFromName $_; if ($t) { $t } else { $_.LastWriteTime } }, Name)
+$imageFile = $imageFiles | Select-Object -First 1
 
 $ts = Get-TsFromName $imageFile
 if (-not $ts) { $ts = Get-TsFromName $audioFile }
@@ -198,13 +203,19 @@ if (Test-Path $postPath) {
     exit 1
 }
 
-# Sposta immagine
-$imageLine = ""
-if ($imageFile) {
-    $dest = Join-Path $root "content\images\$($imageFile.Name)"
-    Move-Item $imageFile.FullName $dest -Force
-    $imageLine = "![]( /images/$($imageFile.Name))"
+# Sposta immagini (tutte quelle in inbox, in ordine cronologico).
+# Dal nome vengono tolti i caratteri invisibili, che romperebbero il link.
+$imageLines = @()
+foreach ($img in $imageFiles) {
+    $cleanName = $img.Name -replace '\p{Cf}', ''
+    $dest = Join-Path $root "content\images\$cleanName"
+    if (Test-Path -LiteralPath $dest) {
+        Write-Warning "Immagine gia' presente, sovrascritta: $cleanName"
+    }
+    Move-Item -LiteralPath $img.FullName $dest -Force
+    $imageLines += "![]( /images/$cleanName)"
 }
+$imageLine = $imageLines -join "`n`n"
 
 # Sposta video
 $videoBlock = ""
